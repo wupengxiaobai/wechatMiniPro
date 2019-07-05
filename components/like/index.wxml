@@ -1,0 +1,5 @@
+<view class="container" bind:tap="addLike">
+  <!-- band:tap / catch:tap -->
+  <image src="{{liked ? yesSrc : noSrc}}" />
+  <text>{{ likeNum }}</text>
+</view>

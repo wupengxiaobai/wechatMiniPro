@@ -1,0 +1,13 @@
+{
+    "pages": [
+        "pages/index/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "SemileMiniPro",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f9f9f9"
+    },
+    "sitemapLocation": "sitemap.json"
+}
