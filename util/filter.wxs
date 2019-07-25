@@ -1,0 +1,18 @@
+//  filter.wxs
+var format = function (text) {
+    // @params -> 匹配字符  
+    // @params -> 修饰符 i m g
+    var reg = getRegExp('\\\\n', 'g')
+    return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function (array, length) {
+    // @parma1 -> 数组
+    // @param2 -> 展示长度
+    return array.slice(0, length)
+}
+
+module.exports = {
+    format: format,
+    limit: limit
+}

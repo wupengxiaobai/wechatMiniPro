@@ -1,0 +1,40 @@
+.epsoide-container {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60rpx;
+}
+
+
+.index-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.plain {
+    font-size: 32rpx;
+}
+
+.index {
+    font-size: 60rpx;
+    font-weight: 700;
+}
+
+.line {
+    margin: 0 15rpx;
+    height: 44rpx;
+    border-left: 1px solid #333;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month,
+.year {
+    line-height: 24rpx;
+    font-size: 24rpx;
+}

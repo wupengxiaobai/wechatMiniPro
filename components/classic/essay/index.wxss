@@ -1,0 +1,24 @@
+.essay-component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.essay-component .banner-img {
+    width: 100%;
+    height: 500rpx;
+}
+
+.essay-component .tag-img {
+    width: 46rpx;
+    height: 142rpx;
+    position: relative;
+    left: -320rpx;
+    bottom: 60rpx;
+}
+
+.essay-component text {
+    font-size: 36rpx;
+    max-width: 550rpx;
+}

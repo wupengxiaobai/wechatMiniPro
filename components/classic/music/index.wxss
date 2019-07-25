@@ -1,0 +1,70 @@
+.music-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-component .img-wrap {
+    position: relative;
+    width: 100%;
+    height: 500rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-component .cd-wrap {
+    overflow: hidden;
+    width: 425rpx;
+    height: 425rpx;
+    border-radius: 50%;
+}
+
+.music-component .cd-wrap image {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+
+.music-component .cd-wrap image.play-control {
+    position: absolute;
+    width: 120rpx;
+    height: 120rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0)
+}
+
+.music-component .tag-img {
+    width: 46rpx;
+    height: 142rpx;
+    position: relative;
+    left: -320rpx;
+    bottom: 60rpx;
+
+}
+
+.music-component text {
+    font-size: 36rpx;
+    max-width: 550rpx;
+}
+
+
+.rotation {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 12s linear infinite;
+    -moz-animation: rotation 12s linear infinite;
+    -webkit-animation: rotation 12s linear infinite;
+    -o-animation: rotation 12s linear infinite;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}

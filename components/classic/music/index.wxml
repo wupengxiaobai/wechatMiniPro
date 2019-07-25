@@ -1,0 +1,11 @@
+<view hidden="{{ hidden }}" class="music-component">
+    <view class="img-wrap">
+        <view class="cd-wrap">
+            <image class="{{ playStatus == 'waitting' ? '' : 'rotation' }}" src="{{ img }}"></image>
+            <!-- 暂停和播放 -->
+            <image bind:tap="changeMusicStatus" class="play-control" src="{{ playStatus == 'waitting'? waittingSrc : playingSrc }}"></image>
+        </view>
+    </view>
+    <image class="tag-img" src="{{ tagImg }}"></image>
+    <text>{{ content }}</text>
+</view>

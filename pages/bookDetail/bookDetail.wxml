@@ -1,0 +1,10 @@
+<wxs src="../../util/filter.wxs" module="util"></wxs>
+<view class="container">
+    <!-- slot插槽的使用/自定义组件地外部样式 -->
+    <v-tag ext-class="ext-tag-class" text="{{ item.text }}" wx:for="{{ util.limit(dayOne, 5) }}" wx:key="index">
+        <text class="tag-small" slot="{{ item.pos }}">{{ ' ' +  item.desc }}</text>
+    </v-tag>
+    <!-- wxs地使用 -->
+    <!-- <text>{{ text }}</text> -->
+    <text class="text" decode="{{true}}">{{ util.format(text) }}</text>
+</view>

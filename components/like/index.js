@@ -33,6 +33,13 @@ Component({
         likeNum: likeNum,
         liked: !liked
       })
+
+      let behavior = this.properties.liked ? 'like' : 'cancel'
+      //  激活自定义事件，向父组件传递必要数据
+      this.triggerEvent('likeOpera', {
+        behavior: behavior
+      }, {})
+
     }
   }
 })

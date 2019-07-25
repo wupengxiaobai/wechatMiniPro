@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="header">
+        <epsoide-cmp index="{{ latest.index }}" pubdate="{{ latest.pubdate }}"></epsoide-cmp>
+        <like-cmp bind:likeOpera="likeOpera" liked="{{ liked }}" likeNum="{{likeNum}}"></like-cmp>
+    </view>
+    <!-- 中间的组件 -->
+    <movie-cmp class="movie" hidden="{{ latest.type !== 100  }}" img="{{ 'undefined' }}" content="{{ latest.content }}"></movie-cmp>
+    <music-cmp class="music" wx:if="{{ latest.type == 1000 }}" img="{{ latest.image }}" musicUrl="{{ latest.url }}" title="{{ latest.title }}" content="{{ latest.content }}"></music-cmp>
+    <essay-cmp class="essay" hidden="{{ latest.type !== 10000 }}" img="{{ 'undefined' }}" content="{{ latest.content }}"></essay-cmp>
+    <!-- 加载器组件 -->
+    <navi-cmp bind:left="onNext" bind:right="onPrevious" title="{{ latest.title }}" first='{{ first }}' last="{{ last }}"></navi-cmp>
+</view>

@@ -1,0 +1,5 @@
+<view class="navi-container">
+    <image bind:tap="handleClickLeft" class="right" src="{{ last? disLeftSrc : leftSrc }}"></image>
+    <view class="title">{{ title }}</view>
+    <image bind:tap="handleClickRight" class="right" src="{{ first? disRightSrc :rightSrc }}"></image>
+</view>

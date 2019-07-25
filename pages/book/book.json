@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "book-cmp": "../../components/book/index"
+    },
+    "window": {
+        "backgroundColor": "#fff"
+    }
+}

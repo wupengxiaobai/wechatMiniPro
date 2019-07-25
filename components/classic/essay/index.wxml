@@ -1,0 +1,5 @@
+<view  hidden="{{ hidden }}" class="essay-component">
+  <image class="banner-img" src="{{ img == 'undefined' ? defaultImg : img }}" />
+  <image class="tag-img" src="{{ tagImg }}"></image>
+  <text>{{ content }}</text>
+</view>

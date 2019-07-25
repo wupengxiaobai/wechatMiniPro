@@ -1,0 +1,5 @@
+<view hidden="{{ hidden }}" class="movie-container">
+  <image class="banner-img" src="{{ img == 'undefined'?defaultImg:'' }}" />
+  <image class="tag-img" src="{{ tagImg }}"></image>
+  <text>{{ content }}</text>
+</view>

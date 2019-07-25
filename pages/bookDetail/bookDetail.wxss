@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+}
+
+.container v-tag {
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.tag-small {
+    font-size: 14rpx;
+}
+
+/**
+    注意给自定义组件：自定义组件地外部样式引入
+**/
+.ext-tag-class {
+    background: oldlace !important;
+}
+
+/* 第二种方式  hock */
+.container v-tag:nth-child(1)>view {
+    color: pink;
+}
+
+.container v-tag:nth-child(2)>view {
+    color: greenyellow;
+}
+
+.text {
+    text-indent: 2em;
+}
