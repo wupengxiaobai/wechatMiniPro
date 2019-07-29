@@ -1,7 +1,7 @@
 /**
  * 搜索模型 -> search 面板高阶组件
  */
-class KeywordModel {
+class searchKey {
     key = '_q'
     max_length = 10
 
@@ -31,5 +31,5 @@ class KeywordModel {
 }
 
 export {
-    KeywordModel
+    searchKey
 }

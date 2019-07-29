@@ -1,4 +1,3 @@
-<!--components/search/search-cmp.wxml-->
 <view class="container">
   <view class="header">
     <view class="search-container">
@@ -8,36 +7,5 @@
     </view>
     <view class='cancel' bind:tap="onCancel">取消</view>
   </view>
-
-  <!-- <view wx:if="{{!finished}}">
-    <view class="history">
-      <view class="title">
-        <view class="chunk"></view>
-        <text>历史搜索</text>
-      </view>
-      <view class="tags">
-        <tag-cmp bind:tapping="onConfirm" wx:for="{{historyKeys}}" text="{{item}}" />
-      </view>
-    </view>
-    <view class="history hot-search">
-      <view class="title">
-        <view class="chunk"></view>
-        <text>热门搜索</text>
-      </view>
-        <view class="tags">
-          <tag-cmp bind:tapping="onConfirm" wx:for="{{hotKeys}}" text="{{item}}" />
-        </view>
-    </view>
-  </view> -->
-
-  <view class="books-container" wx:if="{{finished}}">
-    <block wx:for="{{dataArray}}" wx:key="{{item.id}}">
-      <book-cmp show-like="{{false}}" book="{{item}}" class="book" />
-    </block>
-  </view>
-  <loading-cmp class="loading" wx:if="{{loading}}" />
-  <loading-cmp class="loading-center" wx:if="{{loadingCenter}}" />
-
-  <text wx:if="{{empty}}" class="empty-tip">没有搜索到书籍</text>
   
 </view>

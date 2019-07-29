@@ -119,6 +119,7 @@ Component({
 ```
 *我们编写自定义组件地时候需要给定外部样式的定义，给足使用者多个选择*
 
+
 #### 高阶组件
 **高阶组件示例 --> 搜索面板**
 *历史*                     
@@ -145,21 +146,105 @@ class SearchKey {
         wx.setStorageSync(this.key,historyArr)
     }
 
+    clearHistory() {
+        wx.setStorageSync(this.key, null)
+    }
+}
+```
+
+*热门*
+-   通过接口获取
+   
+**加载更多的复用设计【封装】**
+```JAVASCRIPT
+//  小程序中同用的 behavior【加载更多】
+const paginationBev = Behavior({
+    data: {
+        dataArray: [],
+        total: null,
+        noResult: false
+    },
+
+    methods: {
+        setMoreData(dataArray) {
+            const tempArray = this.dataArray.concat(dataArray)
+            this.setData({
+                dataArray: tempArray
+            })
+        },
+
+        getCurrentStart() {
+            return this.data.dataArray.length
+        },
+
+        hasMore() {
+            return this.data.dataArray < this.data.total
+        },
+
+        setTotal(total) {
+            this.data.total = total
+            if (this.data.total === 0) {
+                this.setData({
+                    noResult: true
+                })
+            }
+        },
+
+        initialize() {
+            this.data.dataArray = []
+            this.data.total = null
+        }
+    }
+})
+
+
+
+//  pagination 【加载更多(分页)帮助类】
+class PaginationHelper {
+    dataArray = []  //  数据数组
+    total = null   //  总记录数
+    noneResult = false    //  没有数据控制变量
+
+    setMoreData(dataArray) {    //  设置最新的数据集
+        const tempArray = this.dataArray.concat(dataArray)
+        this.dataArray = tempArray
+    }
+
+    getCurrentStart() { //  获取跳过数据长度
+        return this.dataArray.length
+    }
+
+    hasMore() { //  是否还有数据返回
+        return this.dataArray < this.total //  思路 1:total 和 当前长度比较 
+    }
+
+    setTotal(total) {   //  设置数据总长度
+        this.total = total
+        if (total == 0) {
+            this.noneResult = true
+        }
+    }
+
+    initialize() {  //  重新搜索时手动初始化，防止数据重复
+        this.dataArray = []
+        this.total = null
+        this.noneResult = false
+    }
 }
 
+export {
+    PaginationHelper
+}
 
 ```
 
 
-
-*热门*
--   通过接口获取
-                      
+                   
                          
 
 
 
-### wxs c
+### wxs
 **基本操作**
 独立地 `wxs` 文件
 ```javascript
@@ -575,3 +660,22 @@ classic.getLatest((res) => {
 ## 基础
 **自动换行元素设置margin-bottom无效**
 解决方案： `给父容器设置 flex 布局`
+
+
+
+## 工具
+**随机字符串函数**
+```javascript
+const chars = ['1','2','3','4','5','6','7','8','9','0','a','b','c'];
+const randomStr = function generateMixed(n) {
+    var res = "";
+    for (var i = 0; i < n; i++) {
+        var id = Math.ceil(Math.random() * (chars.length - 1));
+        res += chars[id];
+    }
+    return res;
+}
+export {
+    randomStr
+}
+```
